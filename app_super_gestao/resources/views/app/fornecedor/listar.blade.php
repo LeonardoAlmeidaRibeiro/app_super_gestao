@@ -44,6 +44,11 @@
                         @endforeach
                     </tbody>
                 </table>
+
+                {{ $fornecedores->appends($request)->links() }}
+                <p>Exibindo {{ $fornecedores->count() }}  de fornecedores de {{ $fornecedores->total() }} (de {{ $fornecedores->firstItem() }} a {{ $fornecedores->lastItem() }})
+
+
             </div>
         </div>
 
