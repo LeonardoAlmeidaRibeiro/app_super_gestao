@@ -32,7 +32,7 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     Route::get('/home', 'HomeController@index')->name('app.home');
     Route::get('/sair', 'LoginController@sair')->name('app.sair');
     Route::get('/cliente', 'ClienteController@index')->name('app.cliente');
-
+    //Fornecedor
     Route::get('/fornecedor', 'FornecedorController@index')->name('app.fornecedor');
     Route::post('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
     Route::get('/fornecedor/listar', 'FornecedorController@listar')->name('app.fornecedor.listar');
@@ -40,7 +40,15 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     Route::post('/fornecedor/adicionar', 'FornecedorController@adicionar')->name('app.fornecedor.adicionar');
     Route::get('/fornecedor/editar/{id}/{msg?}', 'FornecedorController@editar')->name('app.fornecedor.editar');
     Route::get('/fornecedor/excluir/{id}', 'FornecedorController@excluir')->name('app.fornecedor.excluir');
+    //Produtos
     Route::get('/produto', 'ProdutoController@index')->name('app.produto');
+    Route::get('/produto/create', 'ProdutoController@create')->name('app.produto.create');
+    Route::post('/produto/create', 'ProdutoController@store')->name('app.produto.store');
+    Route::get('/produto/show/{produto}', 'ProdutoController@show')->name('app.produto.show');
+    Route::get('/produto/edit/{produto}', 'ProdutoController@edit')->name('app.produto.edit');
+    Route::put('/produto/update/{produto}', 'ProdutoController@update')->name('app.produto.update');
+    Route::delete('/produto/delete/{produto}', 'ProdutoController@destroy')->name('app.produto.destroy');
+
 
 });
 

@@ -1,18 +1,18 @@
 @extends('app.layouts.basico')
 
-@section('titulo', 'Fornecedor')
+@section('titulo', 'Produto')
 
 @section('conteudo')
 
     <div class="conteudo-pagina">
 
         <div class="titulo-pagina-2">
-            <p>Fornecedor - Listar</p>
+            <p>Listagem de Produtos</p>
         </div>
 
         <div class="menu">
             <ul>
-                <li><a href="{{ route('app.fornecedor.adicionar') }}">Novo</a></li>
+                <li><a href="       }">Novo</a></li>
                 <li><a href="{{ route('app.fornecedor') }}">Consulta</a></li>
             </ul>
         </div>
