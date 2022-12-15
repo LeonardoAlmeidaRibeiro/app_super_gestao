@@ -46,9 +46,15 @@ Route::middleware('autenticacao:padrao,visitante,p3,p4')->prefix('/app')->group(
     Route::post('/produto/create', 'ProdutoController@store')->name('app.produto.store');
     Route::get('/produto/show/{produto}', 'ProdutoController@show')->name('app.produto.show');
     Route::get('/produto/edit/{produto}', 'ProdutoController@edit')->name('app.produto.edit');
-    Route::put('/produto/update/{produto}', 'ProdutoController@update')->name('app.produto.update');
+    Route::post('/produto/update/{produto}', 'ProdutoController@update')->name('app.produto.update');
     Route::delete('/produto/delete/{produto}', 'ProdutoController@destroy')->name('app.produto.destroy');
 
+    //Produto Detalhes
+    Route::resource('/produto-detalhe','ProdutoDetalheController');
+    Route::get('/produto-detalhe/create', 'ProdutoDetalheController@create')->name('app.produto-detalhe.create');
+    Route::post('/produto-detalhe/create', 'ProdutoDetalheController@store')->name('app.produto-detalhe.store');
+    Route::get('/produto-detalhe/edit/{produtos_detalhes}', 'ProdutoDetalheController@edit')->name('app.produtos_detalhes.edit');
+    Route::post('/produto-detalhe/update/{produtos_detalhes}', 'ProdutoDetalheController@update')->name('app.produto-detalhe.update');
 
 });
 
